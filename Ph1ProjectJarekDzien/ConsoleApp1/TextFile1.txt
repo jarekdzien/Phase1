@@ -1,0 +1,379 @@
+﻿using ConsoleApp1;
+using System;
+using System.Collections;
+using System.Collections.Generic;   
+using System.IO;
+
+
+namespace aConsoleApp
+{
+    class Program
+    {
+        static int Add(int first, int second)
+        {
+            int result = first + second;
+            return result;
+        }
+
+        static void PrintMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        private static void DrawMenu()
+        {
+            //Console.Clear();
+            Console.WriteLine("------------- MENU ------------");
+            Console.WriteLine("select (1) to add a new teacher.");
+            Console.WriteLine("select (2) to update a teacher's info.");
+            Console.WriteLine("select (3) to list all teachers.");
+            Console.WriteLine("select (Q) or (q) to EXIT");
+        }
+
+        public static void ListTeachers()
+        {
+
+            //Dictionary<string, string> openWith = new Dictionary<string, string>();
+            //openWith.Add("txt", "notepad.exe");
+            //openWith.Add("bmp", "paint.exe");
+            //openWith.Add("dib", "Paint.exe");
+            //openWith.Add("jpg", "wordpad.exe");
+
+            //openWith["jpg"] = "gimp.exe";
+
+
+            //try
+            //{
+            //    openWith.Add("txt", "winword.exe");
+            //}
+            //catch (ArgumentException)   
+            //{
+            //    Console.WriteLine("an element with key \"rtf\" already exists
+            //    ");
+            //}
+
+            //openWith["doc"] = "winword.exe";
+
+            //var nauczyciele = new List<TeacherClass>() {};
+
+            List<Teacher> listTeachers = new List<Teacher>();
+
+            try {
+                var fileName = "db.txt";
+                var lines = File.ReadAllLines(fileName);
+
+                foreach (var line in lines)
+                {
+                    var splits = line.Split("|");
+                    //nauczyciele.Add(new TeacherClass() { TeacherId = splits[0], TeacherName = splits[1], TeacherSurname = splits[2]});
+
+                    //Teacher T = new Teacher();
+                    //T.Id = splits[0];
+                    //T.Name = splits[1];
+                    //T.Surname = splits[2];
+                    //listTeachers.Add(T);
+
+                    listTeachers.Add(new Teacher(splits[0], splits[1], splits[2]));
+                }
+
+                //var lastID = "";
+
+                foreach (var item in listTeachers)
+                {
+                    Console.WriteLine($"{item.Id}|{item.Name}|{item.Surname}");
+                    //lastID = item.Id;
+                }
+
+                //int index = Int32.Parse(lastID);
+                //Console.WriteLine($"{index + 1} is next ID");
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public static void UpdateTeacher(List<Teacher> teachers)
+        {
+            Console.Clear();
+            Console.WriteLine("Menu -> Option 2 - updating teacher record");
+            ListTeachers();
+
+            Console.Write("Which id?: ");
+            var id = Console.ReadLine();
+            var found = false;
+            var OldSurname = "";
+            var TName = "";
+            var TSurname = "";
+
+            var updated = false;
+            foreach (var teacher in teachers)
+            {
+
+                if (teacher.Id == id)
+                {
+                    Console.WriteLine($"Updating : {teacher.Name} {teacher.Surname} ");
+                    OldSurname = $"{teacher.Name} {teacher.Surname}";
+                    TName = teacher.Name;
+                    TSurname = teacher.Surname;
+                    Console.Write($"New Name : ");
+                    teacher.Name = Console.ReadLine(); 
+                    Console.Write($"New Surname : ");
+                    teacher.Surname = Console.ReadLine();
+
+                    if (teacher.Surname == "") { Console.WriteLine("surname stays the same"); teacher.Surname = TSurname; }
+                    if (teacher.Name == "")    { Console.WriteLine("name stays the same");    teacher.Name = TName; }
+
+                    if (teacher.Surname != "" || teacher.Name != "") {
+
+                        updated = true;
+                        Console.WriteLine($"{OldSurname} -> {teacher.Name} {teacher.Surname}");
+                    }
+                    
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                //Console.WriteLine($"Position {id} found.");
+
+                if (updated) { 
+                    Console.WriteLine($"Position {id} updated.");
+                    saveFile(teachers);
+                }
+                else
+                {
+                    Console.WriteLine($"Position {id} not updated.");
+
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{id} not found.");
+            }
+
+        }
+
+        static void saveFile(List<Teacher> listOfTeachers)
+        {
+            var ile = listOfTeachers.Count;
+            var fileName = "db.txt";
+            var lastID = "";
+
+            using (TextWriter tw = new StreamWriter(fileName))
+
+                try
+                {
+                    foreach (var item in listOfTeachers)
+                    {
+                        tw.WriteLine($"{item.Id}|{item.Name}|{item.Surname}|");
+
+                        lastID = item.Surname;
+                    }
+
+                    Console.WriteLine("db saved ->  press enter");
+
+                }
+                catch (Exception Ex)
+                {
+                    Console.WriteLine(Ex);
+                }
+        }
+
+        static void addTeacher(int IdNumber, List<Teacher> listOfTeachers)
+        {
+
+            var id = IdNumber;
+            string teacherName = "";
+            string teacherSurname = "";
+         
+            Console.WriteLine("Menu -> Option 1 and adding teacher into the db");
+
+            while (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
+            {
+                Console.Write("Teachers name: ");
+                teacherName = Console.ReadLine();
+                Console.Write("Teachers surname: ");
+                teacherSurname = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Menu -> Option 1 and adding teacher into the db");
+                    Console.WriteLine("Either name or surname is empty");
+                }
+                else
+                {
+                    listOfTeachers.Add(new Teacher(id.ToString(), teacherName, teacherSurname));
+                    saveFile(listOfTeachers);
+                }
+
+               
+
+                //var ile = listOfTeachers.Count;
+                //var fileName = "db.txt";
+                //var lastID = "";
+
+                //using (TextWriter tw = new StreamWriter(fileName))
+
+                //try
+                //{
+                //    foreach (var item in listOfTeachers)
+                //    {
+                //            tw.WriteLine($"{item.Id}|{item.Name}|{item.Surname}|");
+
+                //            lastID = item.Surname;
+                //    }
+
+                    
+                //    Console.WriteLine($"appened {lastID} to {fileName}");
+                    
+                //}
+                //catch (Exception Ex)
+                //{
+                //    Console.WriteLine(Ex);
+                //}
+
+
+            }
+
+
+            //string teacherName = "";
+            //string teacherSurname = "";
+            //Console.WriteLine("Menu -> Option 1 and adding teacher into the db");
+
+            //while (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
+            //{
+            //    Console.Write("Teachers name: ");
+            //    teacherName = Console.ReadLine();
+            //    Console.Write("Teachers surname: ");
+            //    teacherSurname = Console.ReadLine();
+
+            //    if (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
+            //    {
+            //        Console.Clear();
+            //        Console.WriteLine("Menu -> Option 1 and adding teacher into the db");
+            //        Console.WriteLine("Either name or surname is empty");
+            //    }
+            //    else
+            //    {
+            //        Teacher NewTeacher = new Teacher(IdNumber.ToString(), teacherName, teacherSurname);
+
+
+            //        TeacherClass T = new TeacherClass();
+            //        T.TeacherName = teacherName;
+            //        T.TeacherSurname = teacherSurname;
+            //    }
+            //}
+
+            //string teacher = ($"\n{IdNumber}|{teacherName}|{teacherSurname}");
+
+            //var fileName = "db.txt";
+            //try {
+            //    Console.WriteLine($"appened {teacher} to {fileName}");
+            //    File.AppendAllText(fileName, teacher); 
+            //} 
+            //catch (Exception Ex) {
+            //    Console.WriteLine(Ex);
+            //}
+
+
+            while (Console.ReadKey().Key != ConsoleKey.Enter)
+            {
+                Console.Clear();
+                Console.WriteLine("Press enter to return to main menu.");
+            }
+        }
+
+
+        private static List<Teacher> loadList()
+        {
+            var teachers = new List<Teacher>();
+            var lines = File.ReadAllLines("db.txt");
+
+            foreach (var line in lines)
+            {
+                var fields = line.Split("|");
+
+                //var teacher = new Teacher(fields[0], fields[1], fields[2]);
+                var teacher = new Teacher(line);
+                teachers.Add(teacher);
+            }
+
+            return teachers;
+
+        }
+
+        private static void Main(string[] args)
+        {
+
+            var checkmenu = true;
+
+            string UserOption = "0";
+
+            
+
+            DrawMenu();
+            
+            
+       
+            while (checkmenu)
+           
+            {
+                var listOfTeachers = loadList(); //added load function to create a list of all teachers.
+                
+                UserOption = Console.ReadLine();
+ 
+                if (UserOption == "1")
+                {
+                    Console.Clear();
+
+                   
+                    var ile = listOfTeachers.Count;
+                    //Console.WriteLine($"There's currently {ile} users in db");
+
+                    addTeacher(ile+1, listOfTeachers);
+                    
+                    Console.Clear();
+                    DrawMenu();
+
+                }
+
+                if (UserOption == "2")
+                {
+                    //ListTeachers();
+                    UpdateTeacher(listOfTeachers);
+                }
+
+                if (UserOption == "3")
+                {
+                    //Console.WriteLine($"{UserOption} selected");
+                    Console.Clear();
+                    ListTeachers();
+                    Console.WriteLine("any key to menu");
+                }
+
+                if (UserOption != "1" && UserOption != "2" && UserOption != "3" && UserOption != "Q" && UserOption != "q")
+                {
+                    Console.Clear();
+                    //Console.WriteLine($"{UserOption} : no such option");
+                    DrawMenu();
+                }
+
+                if (UserOption == "Q" || UserOption == "q")
+                {
+                    Console.WriteLine($"{UserOption}  - exit selected");
+                    checkmenu = false;
+                    Console.WriteLine("Press enter to exit.");
+                  
+                }
+            }
+        }
+    }
+}
