@@ -6,10 +6,6 @@ namespace ConsoleApp1
 {
     public class Teacher 
     {
-        //public string TeacherrId { get; private set; }
-        //public string TeacherrName { get; private set; }
-        //public string TeacherrSurname { get; private set; }
-
         private string id;
         private string name;
         private string surname;
@@ -48,7 +44,6 @@ namespace ConsoleApp1
 
         public Teacher(string id, string name, string surname, string aclass, string section)
         {
-            //Console.WriteLine("init");
             Id = id;
             Name = name;
             Surname = surname;

@@ -9,8 +9,7 @@ namespace ConsoleApp1
   
         public TeacherClass()
         {
-            //Console.WriteLine("Class constructor is auto executed.");
-            //Console.WriteLine("Both name and surname must be entered.");
+          
         }
         public string TeacherId { get; set; }
 

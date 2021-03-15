@@ -35,11 +35,9 @@ namespace aConsoleApp
 
         public static void ListTeachers()
         {
-            //Console.Write($"Menu -> Option 3 - ");   
             Console.WriteLine("Listing DB");
 
             List<Teacher> listTeachers = new List<Teacher>();
-            //var ListT = new List<Teacher>();
 
             try {
                 var fileName = "db.txt";
@@ -47,8 +45,6 @@ namespace aConsoleApp
 
                 foreach (var line in lines)
                 {
-                    //var splits = line.Split("|");
-                    //listTeachers.Add(new Teacher(splits[0], splits[1], splits[2], splits[3], splits[4]));
                     var T = new Teacher(line);
                     listTeachers.Add(T);
                 }
@@ -274,7 +270,6 @@ namespace aConsoleApp
 
                 if (UserOption == "4")
                 {
-                    //add options - call function do say what option selected?
 
                     DeleteTeacher(listOfTeachers);
                 }
@@ -292,7 +287,6 @@ namespace aConsoleApp
                  
                     Console.WriteLine("Press enter to exit.");
 
-                    //var X = Console.ReadKey();
 
                 }
             }
@@ -336,7 +330,6 @@ namespace aConsoleApp
                         makingSure = false;
 
                     }
-
                     break;
                 }
             }
@@ -355,7 +348,6 @@ namespace aConsoleApp
                 {
                     Console.WriteLine("Nothing removed.");
                 }
-               
                 
             }
             else
@@ -371,7 +363,6 @@ namespace aConsoleApp
                 Console.Clear();
                 Console.WriteLine("Press enter to return to main menu.");
             }
-
 
         }
     }

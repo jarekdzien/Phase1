@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jarek_Dzien\\source\\repos\\ConsoleApp1\\PassingParams\\PassingParams.csproj",
+      "projectUniqueName": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1\\Ph1ProjectJarekDzien\\PassingParams\\PassingParams.csproj",
       "projectName": "PassingParams",
-      "projectPath": "C:\\Users\\Jarek_Dzien\\source\\repos\\ConsoleApp1\\PassingParams\\PassingParams.csproj",
+      "projectPath": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1\\Ph1ProjectJarekDzien\\PassingParams\\PassingParams.csproj",
       "packagesPath": "C:\\Users\\Jarek_Dzien\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jarek_Dzien\\source\\repos\\ConsoleApp1\\PassingParams\\obj\\",
+      "outputPath": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1\\Ph1ProjectJarekDzien\\PassingParams\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jarek_Dzien\\AppData\\Roaming\\NuGet\\NuGet.Config",
