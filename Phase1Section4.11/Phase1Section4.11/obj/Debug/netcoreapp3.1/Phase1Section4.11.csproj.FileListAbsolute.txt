@@ -1,0 +1,13 @@
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\bin\Debug\netcoreapp3.1\Phase1Section4.11.exe
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\bin\Debug\netcoreapp3.1\Phase1Section4.11.deps.json
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\bin\Debug\netcoreapp3.1\Phase1Section4.11.runtimeconfig.json
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\bin\Debug\netcoreapp3.1\Phase1Section4.11.runtimeconfig.dev.json
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\bin\Debug\netcoreapp3.1\Phase1Section4.11.dll
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\bin\Debug\netcoreapp3.1\Phase1Section4.11.pdb
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.csprojAssemblyReference.cache
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.AssemblyInfoInputs.cache
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.AssemblyInfo.cs
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.csproj.CoreCompileInputs.cache
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.dll
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.pdb
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.11\Phase1Section4.11\obj\Debug\netcoreapp3.1\Phase1Section4.11.genruntimeconfig.cache

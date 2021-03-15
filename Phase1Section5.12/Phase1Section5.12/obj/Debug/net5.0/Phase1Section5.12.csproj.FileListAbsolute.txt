@@ -1,0 +1,16 @@
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\Phase1Section5.12.exe
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\Phase1Section5.12.deps.json
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\Phase1Section5.12.runtimeconfig.json
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\Phase1Section5.12.runtimeconfig.dev.json
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\Phase1Section5.12.dll
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\ref\Phase1Section5.12.dll
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\bin\Debug\net5.0\Phase1Section5.12.pdb
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.csprojAssemblyReference.cache
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.AssemblyInfoInputs.cache
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.AssemblyInfo.cs
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.csproj.CoreCompileInputs.cache
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.dll
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\ref\Phase1Section5.12.dll
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.pdb
+C:\Users\Jarek_Dzien\source\repos\Phase1Section5.12\Phase1Section5.12\obj\Debug\net5.0\Phase1Section5.12.genruntimeconfig.cache

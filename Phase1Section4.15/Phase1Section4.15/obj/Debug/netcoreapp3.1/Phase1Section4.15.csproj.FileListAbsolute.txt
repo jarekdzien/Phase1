@@ -1,0 +1,12 @@
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\bin\Debug\netcoreapp3.1\Phase1Section4.15.exe
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\bin\Debug\netcoreapp3.1\Phase1Section4.15.deps.json
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\bin\Debug\netcoreapp3.1\Phase1Section4.15.runtimeconfig.json
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\bin\Debug\netcoreapp3.1\Phase1Section4.15.runtimeconfig.dev.json
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\bin\Debug\netcoreapp3.1\Phase1Section4.15.dll
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\bin\Debug\netcoreapp3.1\Phase1Section4.15.pdb
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\obj\Debug\netcoreapp3.1\Phase1Section4.15.AssemblyInfoInputs.cache
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\obj\Debug\netcoreapp3.1\Phase1Section4.15.AssemblyInfo.cs
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\obj\Debug\netcoreapp3.1\Phase1Section4.15.csproj.CoreCompileInputs.cache
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\obj\Debug\netcoreapp3.1\Phase1Section4.15.dll
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\obj\Debug\netcoreapp3.1\Phase1Section4.15.pdb
+C:\Users\Jarek_Dzien\Documents\Dev\SL\Phase1Section4.15\Phase1Section4.15\obj\Debug\netcoreapp3.1\Phase1Section4.15.genruntimeconfig.cache
