@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj": {}
+    "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj": {
+    "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj",
+        "projectUniqueName": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj",
         "projectName": "Phase1Section6.6",
-        "projectPath": "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj",
+        "projectPath": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.6\\Phase1Section6.6\\Phase1Section6.6.csproj",
         "packagesPath": "C:\\Users\\Jarek_Dzien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.6\\Phase1Section6.6\\obj\\",
+        "outputPath": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.6\\Phase1Section6.6\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jarek_Dzien\\AppData\\Roaming\\NuGet\\NuGet.Config",

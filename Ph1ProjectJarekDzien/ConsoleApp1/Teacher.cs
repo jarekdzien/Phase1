@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
@@ -42,6 +43,10 @@ namespace ConsoleApp1
             set { section = value; }
         }
 
+        public Teacher()
+        {
+
+        }
         public Teacher(string id, string name, string surname, string aclass, string section)
         {
             Id = id;
@@ -61,5 +66,6 @@ namespace ConsoleApp1
             AClass = fields[3];
             Section = fields[4];
         }
+
     }
 }

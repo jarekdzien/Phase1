@@ -33,13 +33,13 @@ namespace aConsoleApp
             Console.WriteLine("select (Q) or (q) to EXIT");
         }
 
+
+
         public static void ListTeachers()
         {
-            //Console.Write($"Menu -> Option 3 - ");   
             Console.WriteLine("Listing DB");
 
             List<Teacher> listTeachers = new List<Teacher>();
-            //var ListT = new List<Teacher>();
 
             try {
                 var fileName = "db.txt";
@@ -47,8 +47,6 @@ namespace aConsoleApp
 
                 foreach (var line in lines)
                 {
-                    //var splits = line.Split("|");
-                    //listTeachers.Add(new Teacher(splits[0], splits[1], splits[2], splits[3], splits[4]));
                     var T = new Teacher(line);
                     listTeachers.Add(T);
                 }
@@ -59,7 +57,9 @@ namespace aConsoleApp
 
                 foreach (var item in listTeachers)
                 {
-                    if (item.Name.Length >= 7) { Console.WriteLine($"{item.Id}.\t|{item.Name}\t|{item.Surname}\t|{item.AClass}\t|{item.Section}"); 
+                    if (item.Name.Length >= 7) 
+                    { 
+                        Console.WriteLine($"{item.Id}.\t|{item.Name}\t|{item.Surname}\t|{item.AClass}\t|{item.Section}"); 
                     } 
                     else 
                     { 
@@ -67,7 +67,6 @@ namespace aConsoleApp
                     }
                 }
                 Console.WriteLine("-------------------------------------------------");
-
 
             }
             catch (Exception ex)
@@ -83,24 +82,23 @@ namespace aConsoleApp
             ListTeachers();
 
             Console.Write("\n Enter ID: ");
-            var id = Console.ReadLine();
-            var found = false;
-            var OldSurname = "";
-            var TName = "";
-            var TSurname = "";
+            string id = Console.ReadLine();
+            bool found = false;
+            bool updated = false;
 
-            var updated = false;
             foreach (var teacher in teachers)
             {
 
                 if (teacher.Id == id)
                 {
                     Console.WriteLine($"Updating : {teacher.Name} {teacher.Surname} ");
-                    OldSurname = $"{teacher.Name} {teacher.Surname}";
-                    TName = teacher.Name;
-                    TSurname = teacher.Surname;
+                    string OldSurname = $"{teacher.Name} {teacher.Surname}";
+                    string TName = teacher.Name;
+                    string TSurname = teacher.Surname;
+                    
                     Console.Write($"New Name : ");
                     teacher.Name = Console.ReadLine(); 
+                    
                     Console.Write($"New Surname : ");
                     teacher.Surname = Console.ReadLine();
 
@@ -140,6 +138,7 @@ namespace aConsoleApp
 
         static void saveFile(List<Teacher> listOfTeachers)
         {
+
             var ile = listOfTeachers.Count;
             var fileName = "db.txt";
             var lastID = "";
@@ -168,9 +167,6 @@ namespace aConsoleApp
             var id = IdNumber;
             string teacherName = "";
             string teacherSurname = "";
-            string teacherClass = "";
-            string teacherSection = "";
-
             Console.WriteLine("Menu -> Option 1 and adding teacher into the db");
 
             while (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
@@ -181,12 +177,10 @@ namespace aConsoleApp
                 teacherSurname = Console.ReadLine();
 
                 Console.Write("Class: ");
-                teacherClass = Console.ReadLine();
+                string _teacherClass = Console.ReadLine();
 
                 Console.Write("Section: ");
-                teacherSection = Console.ReadLine();
-
-
+                string teacherSection = Console.ReadLine();
                 if (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
                 {
                     Console.Clear();
@@ -195,7 +189,7 @@ namespace aConsoleApp
                 }
                 else
                 {
-                    listOfTeachers.Add(new Teacher(id.ToString(), teacherName, teacherSurname, teacherClass, teacherSection));
+                    listOfTeachers.Add(new Teacher(id.ToString(), teacherName, teacherSurname, _teacherClass, teacherSection));
                     saveFile(listOfTeachers);
                     ListTeachers();
                 }
@@ -226,27 +220,22 @@ namespace aConsoleApp
         private static void Main(string[] args)
         {
 
-            var checkmenu = true;
-            string UserOption = "0";
+            bool checkmenu = true;
 
-            DrawMenu();
-            
             while (checkmenu)
             {
-                var listOfTeachers = loadList(); 
-                
-                UserOption = Console.ReadLine();
- 
+                DrawMenu();
+
+                var listOfTeachers = loadList();
+                string UserOption = Console.ReadLine();
+
                 if (UserOption == "1")
                 {
-                    Console.Clear();
+                    //Console.Clear();
                    
                     var ile = listOfTeachers.Count;
 
                     addTeacher(ile+1, listOfTeachers);
-                    
-                    Console.Clear();
-                    DrawMenu();
 
                 }
 
@@ -260,13 +249,14 @@ namespace aConsoleApp
                 if (UserOption == "3")
                 {
                     Console.Clear();
+                    
                     ListTeachers();
+
 
                     while (Console.ReadKey().Key != ConsoleKey.Enter)
                     {
-                       
-                        Console.Clear();
-                        Console.WriteLine("Press enter to return to main menu.");
+                        Console.WriteLine("Press any key to return to main menu.");
+                        Console.ReadKey();
                     }
                     
                     DrawMenu();
@@ -274,7 +264,6 @@ namespace aConsoleApp
 
                 if (UserOption == "4")
                 {
-                    //add options - call function do say what option selected?
 
                     DeleteTeacher(listOfTeachers);
                 }
@@ -292,7 +281,6 @@ namespace aConsoleApp
                  
                     Console.WriteLine("Press enter to exit.");
 
-                    //var X = Console.ReadKey();
 
                 }
             }
@@ -336,7 +324,6 @@ namespace aConsoleApp
                         makingSure = false;
 
                     }
-
                     break;
                 }
             }
@@ -355,7 +342,6 @@ namespace aConsoleApp
                 {
                     Console.WriteLine("Nothing removed.");
                 }
-               
                 
             }
             else
@@ -371,7 +357,6 @@ namespace aConsoleApp
                 Console.Clear();
                 Console.WriteLine("Press enter to return to main menu.");
             }
-
 
         }
     }

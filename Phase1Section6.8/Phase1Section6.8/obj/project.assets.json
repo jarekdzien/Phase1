@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.8\\Phase1Section6.8\\Phase1Section6.8.csproj",
+      "projectUniqueName": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.8\\Phase1Section6.8\\Phase1Section6.8.csproj",
       "projectName": "Phase1Section6.8",
-      "projectPath": "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.8\\Phase1Section6.8\\Phase1Section6.8.csproj",
+      "projectPath": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.8\\Phase1Section6.8\\Phase1Section6.8.csproj",
       "packagesPath": "C:\\Users\\Jarek_Dzien\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jarek_Dzien\\source\\repos\\Phase1Section6.8\\Phase1Section6.8\\obj\\",
+      "outputPath": "C:\\Users\\Jarek_Dzien\\Documents\\Dev\\SL\\Phase1Section6.8\\Phase1Section6.8\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jarek_Dzien\\AppData\\Roaming\\NuGet\\NuGet.Config",
