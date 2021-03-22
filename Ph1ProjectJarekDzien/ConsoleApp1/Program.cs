@@ -4,24 +4,28 @@ using System.Collections;
 using System.Collections.Generic;   
 using System.IO;
 
+//jarek_dzien.
+//I am not a programmer.
+//I'ts my first ever c# app.
+//I'ts my first ever OOP app.
 
 namespace aConsoleApp
 {
     class Program
     {
-        static int Add(int first, int second)
-        {
-            int result = first + second;
-            return result;
-        }
+        //static int Add(int first, int second)
+        //{
+        //    int result = first + second;
+        //    return result;
+        //}
 
-        static void PrintMessage(string message)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(message);
-            Console.ForegroundColor = ConsoleColor.White;
+        //static void PrintMessage(string message)
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Green;
+        //    Console.WriteLine(message);
+        //    Console.ForegroundColor = ConsoleColor.White;
 
-        }
+        //}
         private static void DrawMenu()
         {
             Console.Clear();
@@ -32,7 +36,6 @@ namespace aConsoleApp
             Console.WriteLine("select (4) to delete teacher account.");
             Console.WriteLine("select (Q) or (q) to EXIT");
         }
-
 
 
         public static void ListTeachers()
@@ -85,9 +88,11 @@ namespace aConsoleApp
 
         public static void UpdateTeacher(int option, List<Teacher> teachers)
         {
-            Console.Clear();
-            Console.WriteLine($"Menu -> Option {option} - updating teacher record");    
-            ListTeachers();
+            //Console.Clear();
+            Console.WriteLine($"Menu -> Option {option} - updating teacher record");
+            var repo = new PipedTeacherRepository();
+            repo.ListTeachers(teachers);
+            //ListTeachers();
 
             Console.Write("\n Enter ID: ");
             string id = Console.ReadLine();
@@ -129,9 +134,15 @@ namespace aConsoleApp
 
                 if (updated) { 
                     Console.WriteLine($"Position {id} updated.");
-                    saveFile(teachers);
+                    //saveFile(teachers); // my first implementation of save function 
+
+                    repo.Save(teachers);
+
                     Console.WriteLine("\n");
-                    ListTeachers();
+                    //ListTeachers(); // my first implementation of listing function 
+
+                    repo.ListTeachers(teachers);
+
                 }
                 else
                 {
@@ -150,7 +161,7 @@ namespace aConsoleApp
             var ile = listOfTeachers.Count;
             var fileName = "db.txt";
             var lastID = "";
-
+            
             using (TextWriter tw = new StreamWriter(fileName))
 
                 try
@@ -191,7 +202,7 @@ namespace aConsoleApp
                 string teacherSection = Console.ReadLine();
                 if (string.IsNullOrEmpty(teacherName) || string.IsNullOrEmpty(teacherSurname))
                 {
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("Menu -> Option 1 and adding teacher into the db");
                     Console.WriteLine("Either name or surname is empty");
                 }
@@ -205,7 +216,7 @@ namespace aConsoleApp
 
             while (Console.ReadKey().Key != ConsoleKey.Enter)
             {
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("Press enter to return to main menu.");
             }
         }
@@ -229,17 +240,22 @@ namespace aConsoleApp
         {
 
             bool checkmenu = true;
+            //var listOfTeachers = loadList();          //1st function I wrote to load list of teachers
+            
+            var repo = new PipedTeacherRepository();    // loading teachers via abstract interface
+
+            var listOfTeachers = repo.Load();           // list of teachers the way it was presented in the classes
+
 
             while (checkmenu)
             {
                 DrawMenu();
 
-                var listOfTeachers = loadList();
                 string UserOption = Console.ReadLine();
 
                 if (UserOption == "1")
                 {
-                    Console.Clear();
+                    //Console.Clear();
                    
                     var ile = listOfTeachers.Count;
 
@@ -256,10 +272,11 @@ namespace aConsoleApp
 
                 if (UserOption == "3")
                 {
-                    Console.Clear();
-                    
-                    ListTeachers();
+                    //Console.Clear();
 
+                    //ListTeachers(); // 1st implementation
+            
+                    repo.ListTeachers(listOfTeachers);
 
                     while (Console.ReadKey().Key != ConsoleKey.Enter)
                     {
@@ -272,7 +289,6 @@ namespace aConsoleApp
 
                 if (UserOption == "4")
                 {
-
                     DeleteTeacher(listOfTeachers);
                 }
 
@@ -285,10 +301,10 @@ namespace aConsoleApp
                 if (UserOption == "Q" || UserOption == "q")
                 {
                     Console.WriteLine($"{UserOption}  - exit selected");
+      
                     checkmenu = false;
                  
                     Console.WriteLine("Press enter to exit.");
-
 
                 }
             }
