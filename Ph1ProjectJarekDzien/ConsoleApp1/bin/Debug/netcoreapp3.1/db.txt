@@ -1,5 +1,5 @@
+﻿2|Selina|Kyle|class|section
 1|Bruce|Wayne|class|section
-2|Selina|Kyle|class|section
 3|Rebecca|Kane|class|section
-4|Oliver|Queen|class|section
 5|Peter|Parker|class|section
+4|Oliver|Queen|class|section
