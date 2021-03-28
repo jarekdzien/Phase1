@@ -8,5 +8,6 @@ namespace ConsoleApp1
     {
         List<Teacher> Load();
         void Save(List<Teacher> teachers);
+
     }
 }

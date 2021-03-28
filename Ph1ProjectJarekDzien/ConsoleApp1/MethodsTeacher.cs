@@ -2,12 +2,27 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Collections;
 
 namespace ConsoleApp1
 {
     public class MethodsTeacher : ITeacherRepository
     {
+
+        
         private const string _TechersFile = "db.txt";
+        public void DrawMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("----------  Teacher management app  ---------");
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("Enter [1] to Add a new teacher account.");
+            Console.WriteLine("Enter [2] to Edit teacher's account.");
+            Console.WriteLine("Enter [3] to List all teachers.");
+            Console.WriteLine("Enter [4] to Delete teacher account.");
+            Console.WriteLine("Enter [5] to Sort teacher account.");
+            Console.WriteLine("Enter [Q] or [q] to EXIT");
+        }
         public List<Teacher> Load()
         {
             var lines = File.ReadAllLines(_TechersFile);
@@ -20,21 +35,7 @@ namespace ConsoleApp1
                 teachers.Add(teacher);
             }
             return teachers;
-
         }
-
-        public void DrawMenu()
-        {
-            Console.Clear();
-            Console.WriteLine("------------- MENU ------------");
-            Console.WriteLine("select (1) to add a new teacher account.");
-            Console.WriteLine("select (2) to edit teacher's account.");
-            Console.WriteLine("select (3) to list all teachers.");
-            Console.WriteLine("select (4) to delete teacher account.");
-            Console.WriteLine("select (5) to sort teacher account.");
-            Console.WriteLine("select (Q) or (q) to EXIT");
-        }
-
         public void Save(List<Teacher> teachers)
         {
             var pipedObjects = new List<String>();
@@ -44,7 +45,6 @@ namespace ConsoleApp1
                 pipedObjects.Add(pipedTeacherObject);
             }
         }
-
         public void ListTeachers(List<Teacher> teachers)
         {
             Console.WriteLine("-------------------------------------------------");
@@ -64,13 +64,12 @@ namespace ConsoleApp1
                 }
                 Console.WriteLine("-------------------------------------------------");
         }
-
         public void Update(int option, List<Teacher> teachers)
         {
-            Console.WriteLine($"Menu -> Option {option} - updating teacher record");
+            Console.WriteLine($"Option {option} - updating teacher record");
+            
             var repo = new MethodsTeacher();
             repo.ListTeachers(teachers);
-            //ListTeachers();
 
             Console.Write("\n Enter ID: ");
             string id = Console.ReadLine();
@@ -133,8 +132,9 @@ namespace ConsoleApp1
         public void SortTeachers(List<Teacher> teachers)
         {
             var repo = new MethodsTeacher();
-
             var sorted = new List<Teacher>();
+            var sortedByName = new List<Teacher>();
+            var sortedBySurname = new List<Teacher>();
 
             foreach (var teacher in teachers)
             {
@@ -152,7 +152,6 @@ namespace ConsoleApp1
                 if (!inserted) sorted.Add(teacher);
             }
 
-            var sortedByName = new List<Teacher>();
 
             foreach (var teacher in teachers)
             {
@@ -170,8 +169,6 @@ namespace ConsoleApp1
                 if (!inserted) sortedByName.Add(teacher);
             }
 
-
-            var sortedBySurname = new List<Teacher>();
 
             foreach (var teacher in teachers)
             {
@@ -290,7 +287,6 @@ namespace ConsoleApp1
             }
 
         }
-
         public void addTeacher(int IdNumber, List<Teacher> listOfTeachers)
         {
             var repository = new MethodsTeacher();
@@ -332,6 +328,5 @@ namespace ConsoleApp1
                 Console.WriteLine("Press enter to return to main menu.");
             }
         }
-
     }
 }
